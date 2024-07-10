@@ -11,6 +11,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Navigate to kingdoms-of-vallor Directory
+        run: cd kingdoms-of-vallor
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -18,11 +21,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install Dependencies
-        run: |
-          cd nestjs-kingdoms-of-vallor
-          yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile
 
       - name: Run Tests
-        run: |
-          cd nestjs-kingdoms-of-vallor
-          yarn test
+        run: yarn test
