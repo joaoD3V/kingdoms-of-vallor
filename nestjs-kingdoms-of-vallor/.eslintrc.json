@@ -1,0 +1,13 @@
+{
+  "extends": "@joaod3v/eslint-config/node",
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/adjacent-overload-signatures": "off",
+    "simple-import-sort/imports": "error"
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  }
+}
