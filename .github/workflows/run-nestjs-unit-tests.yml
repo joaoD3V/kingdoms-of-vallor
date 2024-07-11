@@ -1,13 +1,13 @@
-name: Run NestJS Unit Tests
+name: Run Unit Tests
 
 on: [push]
 
 jobs:
   run-unit-tests:
-    name: Run NestJS Unit Tests
+    name: Run Unit Tests
     runs-on: ubuntu-latest
 
-   steps:
+    steps:
       - uses: actions/checkout@v3 #Baixa o código
         working-directory: ./nestjs-kingdoms-of-vallor
       - uses: actions/setup-node@v3 #Configura o node
