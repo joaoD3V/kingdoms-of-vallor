@@ -11,9 +11,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Navigate to kingdoms-of-vallor Directory
-        run: cd nestjs-kingdoms-of-vallor
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
