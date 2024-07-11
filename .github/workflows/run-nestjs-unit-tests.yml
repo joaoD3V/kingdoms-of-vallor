@@ -11,12 +11,15 @@ jobs:
       - uses: actions/checkout@v3 #Baixa o código
       - uses: actions/setup-node@v3 #Configura o node
         with:
-          node-version: 20
+          node-version: 18
+          cache: 'yarn'
 
-      -  run: |
+      - name: Install Dependencies
+        run: |
           cd nestjs-kingdoms-of-vallor
           yarn install --frozen-lockfile
 
-      - run: |
+      - name: Run Tests
+        run: |
           cd nestjs-kingdoms-of-vallor
           yarn test
