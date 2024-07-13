@@ -6,20 +6,19 @@ jobs:
   run-unit-tests:
     name: Run Unit Tests
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'nestjs-kingdoms-of-vallor'
 
     steps:
       - uses: actions/checkout@v3 #Baixa o código
       - uses: actions/setup-node@v3 #Configura o node
         with:
-          node-version: 18
+          node-version: 20
           cache: 'yarn'
 
       - name: Install Dependencies
-        run: |
-          cd nestjs-kingdoms-of-vallor
-          yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile
 
       - name: Run Tests
-        run: |
-          cd nestjs-kingdoms-of-vallor
-          yarn test
+        run: yarn test

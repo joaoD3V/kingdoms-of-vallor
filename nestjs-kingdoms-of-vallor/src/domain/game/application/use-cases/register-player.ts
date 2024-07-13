@@ -13,7 +13,6 @@ interface RegisterPlayerUseCaseRequest {
   username: string;
   email: string;
   password: string;
-  avatar: string;
 }
 
 type RegisterPlayerUseCaseResponse = Either<
@@ -35,7 +34,6 @@ export class RegisterPlayerUseCase {
     username,
     email,
     password,
-    avatar,
   }: RegisterPlayerUseCaseRequest): Promise<RegisterPlayerUseCaseResponse> {
     const playerWithSameEmail = await this.playersRepository.findByEmail(email);
 
@@ -57,7 +55,8 @@ export class RegisterPlayerUseCase {
       username: Username.createFromText(username),
       email,
       password: hashPassword,
-      avatar,
+      avatar: '',
+      isVerified: false,
       currentLevel: 1,
       experienceAmount: 0,
       masteryAmount: 0,

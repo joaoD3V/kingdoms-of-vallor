@@ -20,7 +20,6 @@ describe('Register Player', () => {
       username: 'johndoe',
       email: 'johndoe@example.com',
       password: '123456',
-      avatar: '',
     });
 
     expect(result.isRight()).toBeTruthy();
@@ -35,7 +34,6 @@ describe('Register Player', () => {
       username: 'johndoe',
       email: 'johndoe@example.com',
       password: '123456',
-      avatar: '',
     });
 
     const hashedPassword = await fakeHasher.hash('123456');

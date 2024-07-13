@@ -9,6 +9,7 @@ export interface PlayerProps {
   email: string;
   password: string;
   avatar: string;
+  isVerified: boolean;
   currentLevel: number;
   experienceAmount: number;
   masteryAmount: number;
@@ -33,6 +34,10 @@ export class Player extends Entity<PlayerProps> {
 
   get avatar() {
     return this.props.avatar;
+  }
+
+  get isVerified() {
+    return this.props.isVerified;
   }
 
   get currentLevel() {
