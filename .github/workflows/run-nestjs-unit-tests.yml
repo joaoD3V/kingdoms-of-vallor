@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: 'nestjs-kingdoms-of-vallor'
+        working-directory: './nestjs-kingdoms-of-vallor'
 
     steps:
       - uses: actions/checkout@v3 #Baixa o código
@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 20
           cache: 'yarn'
+          cache-dependency-path: './nestjs-kingdoms-of-vallor/yarn.lock'
 
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
